@@ -10,7 +10,7 @@ deployment_name = "GPT-4-Omni"
   
 def generate_response(prompt):  
     try:  
-        response = openai.ChatCompletion.create(  
+        response = openai.chat.completions.create(  
             engine=deployment_name,  
             messages=[  
                 {"role": "system", "content": "You are an assistant."},  
