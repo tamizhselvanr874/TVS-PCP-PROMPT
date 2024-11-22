@@ -1,6 +1,6 @@
 import streamlit as st  
-import openai  
-  
+from openai import OpenAI
+
 # Configure Azure OpenAI API  
 openai.api_key = "783973291a7c4a74a1120133309860c0"  
 openai.api_base = "https://theswedes.openai.azure.com/"  
@@ -10,7 +10,7 @@ deployment_name = "GPT-4-Omni"
   
 def generate_response(prompt):  
     try:  
-        response = openai.chat.completions.create(  
+        response = client.chat.completions.create(  
             engine=deployment_name,  
             messages=[  
                 {"role": "system", "content": "You are an assistant."},  
